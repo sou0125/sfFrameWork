@@ -41,10 +41,10 @@ namespace sf
 		{
 #if USE_SMARTPTR
 			std::shared_ptr<T> ret = std::make_shared<T>();
-			Component* component = static_cast<Component*>(ret.get());
-			component->Set(this);
+			//Component* component = static_cast<Component*>(ret.get());
+			ret->Set(this);
 			if (activate)
-				component->Begin();
+				ret->Begin();
 			components.push_back(ret);
 			return ret.get();
 #else
